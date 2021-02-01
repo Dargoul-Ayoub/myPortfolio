@@ -13,8 +13,8 @@
 body{
 	background-color:var(--color-primary);
 	color: var(--font-color);
-	font-size: 12px;
-    font-family: "Georgia","Lucida Handwriting";
+	font-size: 14px;
+    font-family: "Calibri","Georgia";
     font-weight: bold;
     margin: 0px;
     }
@@ -44,13 +44,17 @@ body{
 }
 #about-me{
 	background-color:var(--color-secondary);
-	color: var(--font-color);
+	/*color: var(--font-color);*/
+	color: gray;
 	border-radius: 10px;
 	padding: 25px;
     box-shadow: 0px 0px 10px lightgray;
     margin-left: 250px;
     margin-right: 250px;
     font-size: 20px;
+}
+#about-me strong{
+	font-size: 50px;
 }
 
 img{
@@ -63,6 +67,12 @@ img{
 }
 img:hover{
      	transform: scale(2);
+}
+
+.categories{
+    width: 25%;
+    margin-right: auto;
+    margin-left: auto;
 }
 .cercle-img{
 	width: 170px;
@@ -81,7 +91,6 @@ img:hover{
 	border-radius: 10px;
 	height: 485px;
 	margin: 10px;
-	padding: 5px;
 	text-align: center;
 	background-color: var(--color-secondary)
 }
@@ -109,7 +118,7 @@ td{
 }
 .box-item{
 	width: 300px;
-	padding: 10px;
+	padding: 15px;
 	box-shadow: 0px 0px 5px lightgray;
 }
 table{
@@ -143,6 +152,7 @@ ol{
 	text-align: center;
 	list-style-position: inside;
 	font-weight: bold;
+	padding: 0px;
 }
 h2,h3{
 	text-align: center;
@@ -155,11 +165,12 @@ h3{
 	border-top: 0.2px solid lightgray;
 }
 .background-color-red{
-	background-color: red;
-	color : var(--font-color);
+	background-color:  #FF5733;
+	font-size: 20px;
+	color : #ffffff;
 }
 ol li{
-	margin: 10px;
+	margin: 5px;
 }
 footer p{
 	margin: 0px;
@@ -206,7 +217,6 @@ strong{
 	color: #FF5733;
 	font-size: 20px;
 }
-
 
 @media only screen and (max-width: 600px){
 	#about-me{
