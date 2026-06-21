@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dargoul Ayoub - Développeur .NET passionné avec une expertise en développement mobile, desktop et web. Open to work à Rabat, Maroc.">
-    <meta name="keywords" content="Développeur .NET, C#, Java, Développement Mobile, ASP.NET, Rabat, Maroc, Développeur Full Stack">
-    <meta name="author" content="Dargoul Ayoub">
-    <title>Dargoul Ayoub - Développeur .NET | Portfolio</title>
+    <meta name="description" content="Ayoub DARGOUL — Data Scientist | Intelligence Artificielle Générative | Développeur .NET. Spécialiste IA, vision industrielle, automatisation et Business Intelligence.">
+    <meta name="keywords" content="Data Scientist, Intelligence Artificielle, IA Générative, LLM, RAG, Deep Learning, .NET, C#, Python, Machine Learning, Business Intelligence, Power BI, n8n, Docker">
+    <meta name="author" content="Ayoub DARGOUL">
+    <title>Ayoub DARGOUL — Data Scientist | IA Générative | .NET</title>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZDC88WK60"></script>
     <script>
@@ -17,16 +17,19 @@
     </script>
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --success-color: #27ae60;
-            --text-color: #333;
-            --text-light: #777;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --primary-color: #6366f1;
+            --secondary-color: #1e293b;
+            --accent-color: #8b5cf6;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --success-color: #10b981;
+            --text-color: #334155;
+            --text-light: #64748b;
+            --shadow: 0 10px 40px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
 
         * {
@@ -36,28 +39,30 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background: #f9f9f9;
+            background: #f1f5f9;
             scroll-behavior: smooth;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* Navigation */
         .navbar {
-            background: white;
-            box-shadow: var(--shadow);
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: 15px 0;
+            padding: 16px 0;
+            transition: var(--transition);
         }
 
         .nav-container {
@@ -66,50 +71,84 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
+            gap: 32px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: var(--transition);
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--primary-color);
         }
 
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         .hamburger {
             display: none;
             cursor: pointer;
+            font-size: 1.4rem;
+            color: var(--secondary-color);
         }
 
         /* Header */
         header {
             text-align: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 120px 40px 80px;
-            border-radius: 0 0 10px 10px;
-            margin-bottom: 40px;
+            background: var(--gradient-dark);
+            padding: 140px 40px 100px;
             position: relative;
             overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%);
+            animation: pulse-bg 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-bg {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
 
         .header-content {
@@ -120,124 +159,115 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            object-fit: contain;
-            border: 5px solid white;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.2);
+            margin-bottom: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         h1 {
             font-size: 3rem;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
+            margin-bottom: 16px;
+            color: white;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .status {
-            background: var(--success-color);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
             display: inline-block;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .tagline {
             font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
             font-weight: 300;
         }
 
         .intro {
             font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
             line-height: 1.8;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary-color);
+            padding: 14px 32px;
+            background: var(--gradient-primary);
             color: white;
-            border-radius: 30px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            margin: 5px;
+            margin: 8px;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.4);
         }
 
         .btn:hover {
-            background: #2980b9;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(99,102,241,0.5);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            box-shadow: none;
         }
 
         .btn-outline:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .cta {
-            background: var(--light-color);
-            color: var(--secondary-color);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            text-align: center;
-            font-weight: 500;
-            box-shadow: var(--shadow);
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
         }
 
         /* Sections */
         .section {
             background: white;
-            padding: 60px 40px;
-            border-radius: 10px;
-            margin-bottom: 40px;
+            padding: 80px 40px;
+            border-radius: 24px;
+            margin-bottom: 32px;
             box-shadow: var(--shadow);
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+            font-size: 2.2rem;
+            margin-bottom: 48px;
             color: var(--secondary-color);
             text-align: center;
             position: relative;
+            font-weight: 800;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 60px;
             height: 4px;
-            background: var(--primary-color);
-            margin: 15px auto;
+            background: var(--gradient-primary);
+            margin: 16px auto 0;
             border-radius: 2px;
         }
 
@@ -245,7 +275,7 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 48px;
             align-items: center;
         }
 
@@ -255,53 +285,85 @@
             color: var(--text-light);
         }
 
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .about-text strong {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
         .about-img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            border-radius: 16px;
+            box-shadow: var(--shadow-hover);
         }
 
         /* Skills */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
         }
 
         .skill-category {
-            margin-bottom: 30px;
+            background: var(--light-color);
+            border-radius: 16px;
+            padding: 28px;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .skill-category h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--secondary-color);
             margin-bottom: 20px;
-            border-left: 4px solid var(--primary-color);
-            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
         }
 
         .skills-list {
             list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .skills-list li {
-            background: var(--light-color);
-            padding: 12px 15px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-color);
+            border: 1px solid rgba(0,0,0,0.05);
             transition: var(--transition);
         }
 
         .skills-list li:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow);
-        }
-
-        .skills-list li i {
-            margin-right: 10px;
-            color: var(--primary-color);
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* Projects */
@@ -309,22 +371,27 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            gap: 12px;
         }
 
         .filter-btn {
-            padding: 8px 20px;
-            margin: 5px;
-            background: var(--light-color);
-            border: none;
-            border-radius: 30px;
+            padding: 10px 24px;
+            background: white;
+            border: 2px solid var(--light-color);
+            border-radius: 50px;
             cursor: pointer;
             transition: var(--transition);
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.9rem;
         }
 
         .filter-btn.active, .filter-btn:hover {
-            background: var(--primary-color);
+            background: var(--gradient-primary);
             color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.3);
         }
 
         .projects-grid {
@@ -334,17 +401,17 @@
         }
 
         .project {
-            background: #f8f9fa;
-            border-radius: 10px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             transition: var(--transition);
-            border: 1px solid #e9ecef;
+            border: 1px solid rgba(0,0,0,0.05);
             position: relative;
         }
 
         .project:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-hover);
         }
 
         .project-image {
@@ -352,206 +419,143 @@
             height: 180px;
             object-fit: contain;
             background: #e9ecef;
+            display: block;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .project-content {
-            padding: 20px;
+            padding: 24px;
         }
 
         .project h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: var(--secondary-color);
+            font-weight: 700;
         }
 
         .project-description {
             color: var(--text-light);
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .tech-tag {
-            background: var(--secondary-color);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
+            background: var(--light-color);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 8px;
             font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .project-links {
             display: flex;
-            gap: 15px;
+            gap: 16px;
         }
 
         .project-link {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             display: flex;
             align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
         .project-link:hover {
-            color: #2980b9;
-        }
-
-        .project-link i {
-            margin-right: 5px;
-        }
-
-        /* Experience */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--light-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid var(--primary-color);
-            border-radius: 50%;
-            top: 15px;
-            right: -13px;
-            z-index: 1;
-        }
-
-        .left {
-            left: 0;
-        }
-
-        .right {
-            left: 50%;
-        }
-
-        .right::after {
-            left: -13px;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: var(--shadow);
-        }
-
-        .timeline-date {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .timeline-title {
-            margin-bottom: 10px;
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
         /* Contact */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 48px;
+            align-items: start;
         }
 
-        .contact-info {
-            margin-bottom: 30px;
+        .contact-info h3 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            line-height: 1.7;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            color: var(--text-light);
+            margin-bottom: 16px;
+            color: var(--text-color);
+            font-weight: 500;
         }
 
         .contact-item i {
-            margin-right: 15px;
+            margin-right: 16px;
             color: var(--primary-color);
             font-size: 1.2rem;
-            width: 20px;
+            width: 24px;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 16px;
+            margin-top: 24px;
         }
 
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background: var(--light-color);
             color: var(--primary-color);
-            border-radius: 50%;
+            border-radius: 12px;
             text-decoration: none;
             transition: var(--transition);
+            font-size: 1.2rem;
         }
 
         .social-links a:hover {
-            background: var(--primary-color);
+            background: var(--gradient-primary);
             color: white;
             transform: translateY(-3px);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-        }
-
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
+            box-shadow: 0 8px 20px rgba(99,102,241,0.3);
         }
 
         /* Footer */
         footer {
-            background: var(--secondary-color);
+            background: var(--gradient-dark);
             color: white;
             padding: 60px 0 30px;
             text-align: center;
@@ -560,13 +564,21 @@
         .footer-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-content p:first-child {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .footer-credit {
-            color: #bdc3c7;
+            color: rgba(255,255,255,0.5);
             margin-top: 30px;
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
         }
 
         /* Back to top */
@@ -576,18 +588,19 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: var(--primary-color);
+            background: var(--gradient-primary);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: var(--shadow);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.4);
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
             z-index: 999;
+            font-size: 1.1rem;
         }
 
         .back-to-top.show {
@@ -596,51 +609,35 @@
         }
 
         .back-to-top:hover {
-            background: #2980b9;
             transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(99,102,241,0.5);
         }
 
         /* Responsive */
         @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
+            .about-content,
             .contact-container {
                 grid-template-columns: 1fr;
             }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 18px;
-            }
-            
-            .left, .right {
-                left: 0;
+
+            .about-img {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
             }
         }
 
         @media (max-width: 768px) {
             .navbar {
-                padding: 15px 0;
+                padding: 16px 0;
             }
-            
+
             .nav-links {
                 position: fixed;
                 height: 100vh;
                 width: 100%;
                 flex-direction: column;
                 clip-path: circle(0px at top right);
-                -webkit-clip-path: circle(0px at top right);
                 background: var(--secondary-color);
                 top: 0;
                 left: 0;
@@ -648,79 +645,82 @@
                 align-items: center;
                 transition: var(--transition);
                 z-index: 999;
+                gap: 0;
             }
-            
+
             .nav-links.active {
                 clip-path: circle(150% at top right);
-                -webkit-clip-path: circle(150% at top right);
             }
-            
+
             .nav-links li {
-                margin: 15px 0;
+                margin: 20px 0;
             }
-            
+
             .nav-links a {
                 color: white;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
-            
+
             .hamburger {
                 display: block;
                 z-index: 1000;
             }
-            
+
             header {
-                padding: 150px 20px 60px;
+                padding: 120px 24px 80px;
             }
-            
+
             h1 {
-                font-size: 2.2rem;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .section {
-                padding: 40px 20px;
-            }
-            
-            .section-title {
                 font-size: 2rem;
             }
-            
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 48px 24px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
             .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
                 grid-template-columns: 1fr;
             }
         }
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .animate {
-            animation: fadeIn 1s ease-out;
+            animation: fadeIn 0.8s ease-out forwards;
         }
 
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Dargoul Ayoub</a>
+            <a href="#" class="logo">Ayoub DARGOUL</a>
             <ul class="nav-links">
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#projects">Projets</a></li>
-                <li><a href="#experience">Parcours</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -732,96 +732,122 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <img src="images/photo.png" alt="Dargoul Ayoub" class="profile-img">
-            <h1>Dargoul Ayoub</h1>
-            <div class="status">Open to Work - Rabat, Morocco</div>
-            <p class="tagline">Développeur .NET Passionné</p>
+            <img src="images/photo.png" alt="Ayoub DARGOUL" class="profile-img">
+            <h1>Ayoub DARGOUL</h1>
+            <div class="status">Data Scientist · IA Générative · Développeur .NET</div>
+            <p class="tagline">De la donnée brute à l'IA opérationnelle</p>
             <p class="intro">
-                Je suis passionné par l'informatique. J'ai découvert ma passion sur le tard, il m'a fallu 7 ans pour le comprendre mais cela ne m'a pas empêché de faire le premier pas pour recommencer à zéro. Je me sens à l'aise quand je code, programme et résous des problèmes. Je suis autodidacte et travailleur, j'aime relever de nouveaux défis.
+                Passionné par l'<strong>intelligence artificielle</strong>, l'<strong>analyse de données</strong> et le <strong>développement logiciel</strong>. Je conçois des solutions alliant deep learning, automatisation intelligente et business intelligence — du prototype à l'industrialisation.
             </p>
             <div class="header-buttons">
-                <a href="#contact" class="btn">Me contacter</a>
-                <a href="#" class="btn btn-outline">Télécharger mon CV</a>
+                <a href="#projects" class="btn">Voir mes projets</a>
+                <a href="#contact" class="btn btn-outline">Me contacter</a>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <!-- Call to Action -->
-        <div class="cta animate">
-            <p>N'hésitez pas à me contacter si vous trouvez mon profil intéressant, je serai ravi de pouvoir vous aider.</p>
-        </div>
-
         <!-- About Section -->
         <section id="about" class="section animate">
             <h2 class="section-title">À propos de moi</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Développeur .NET passionné avec une solide expérience en développement d'applications mobiles, desktop et web. Autodidacte et déterminé, j'ai suivi mon parcours professionnel initial dans un autre domaine avant de me reconvertir dans ma véritable passion : le développement logiciel.</p>
-                    <p>Ma curiosité naturelle et ma capacité d'adaptation me permettent de rapidement maîtriser de nouvelles technologies et concepts. J'aime particulièrement résoudre des problèmes complexes et créer des solutions élégantes et efficaces.</p>
-                    <p>Actuellement à la recherche de nouvelles opportunités où je pourrais mettre mes compétences à contribution tout en continuant à apprendre et à me développer professionnellement.</p>
+                    <p>
+                        Je combine une <strong>solide formation en intelligence artificielle</strong> (Master option IA) avec une <strong>pratique du développement .NET</strong> et une expérience terrain en analyse de données. Cette triple casquette me permet d'aborder les projets de bout en bout : du recueil du besoin métier à la mise en production.
+                    </p>
+                    <p>
+                        Ma spécialité : <strong>industrialiser l'IA</strong>. Que ce soit par des pipelines d'automatisation (n8n, Docker, cloud), des architectures RAG (LangChain, ChromaDB) ou des modèles de vision validés en conditions réelles, je fais passer les prototypes du labo à l'opérationnel.
+                    </p>
+                    <p>
+                        Autonome, rigoureux et curieux, je suis toujours en veille sur les nouvelles approches en <strong>IA générative</strong>, <strong>computer vision</strong> et <strong>data engineering</strong>.
+                    </p>
                 </div>
-                <img src="images/IMG_20210729_110250.jpg" alt="À propos de Dargoul Ayoub" class="about-img">
+                <img src="images/IMG_20210729_110250.jpg" alt="Ayoub DARGOUL" class="about-img">
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="section animate">
-            <h2 class="section-title">Mes Compétences</h2>
+            <h2 class="section-title">Compétences</h2>
             <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Développement Backend</h3>
+                <div class="skill-category animate delay-1">
+                    <h3><span class="skill-icon"><i class="fas fa-brain"></i></span> IA &amp; Machine Learning</h3>
                     <ul class="skills-list">
-                        <li><i class="fas fa-check"></i> C#</li>
-                        <li><i class="fas fa-check"></i> ASP.NET</li>
-                        <li><i class="fas fa-check"></i> WebServices (SOAP & REST API)</li>
-                        <li><i class="fas fa-check"></i> ADO.NET</li>
-                        <li><i class="fas fa-check"></i> Entity Framework</li>
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>Scikit-learn</li>
+                        <li>NLP</li>
+                        <li>CNN</li>
+                        <li>OpenCV</li>
+                        <li>Fine-tuning</li>
                     </ul>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Développement Frontend</h3>
+
+                <div class="skill-category animate delay-2">
+                    <h3><span class="skill-icon"><i class="fas fa-robot"></i></span> IA Générative &amp; LLM</h3>
                     <ul class="skills-list">
-                        <li><i class="fas fa-check"></i> HTML</li>
-                        <li><i class="fas fa-check"></i> CSS</li>
-                        <li><i class="fas fa-check"></i> JavaScript</li>
-                        <li><i class="fas fa-check"></i> Bootstrap 4</li>
+                        <li>LangChain</li>
+                        <li>RAG</li>
+                        <li>ChromaDB</li>
+                        <li>HuggingFace</li>
+                        <li>MCP</li>
+                        <li>LLM Mistral</li>
+                        <li>Groq API</li>
+                        <li>Prompt Engineering</li>
                     </ul>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Bases de données</h3>
+
+                <div class="skill-category animate delay-3">
+                    <h3><span class="skill-icon"><i class="fas fa-database"></i></span> Data &amp; Business Intelligence</h3>
                     <ul class="skills-list">
-                        <li><i class="fas fa-check"></i> SQL Server</li>
-                        <li><i class="fas fa-check"></i> T-SQL</li>
-                        <li><i class="fas fa-check"></i> SQLite</li>
+                        <li>Python</li>
+                        <li>SQL Server</li>
+                        <li>MySQL</li>
+                        <li>Power BI</li>
+                        <li>DAX</li>
+                        <li>Excel avancé</li>
+                        <li>ETL</li>
+                        <li>Pandas</li>
                     </ul>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Développement Mobile</h3>
+
+                <div class="skill-category animate delay-1">
+                    <h3><span class="skill-icon"><i class="fas fa-cogs"></i></span> Automatisation &amp; Cloud</h3>
                     <ul class="skills-list">
-                        <li><i class="fas fa-check"></i> Java</li>
-                        <li><i class="fas fa-check"></i> Android Studio</li>
-                        <li><i class="fas fa-check"></i> XML</li>
+                        <li>n8n</li>
+                        <li>Docker</li>
+                        <li>Google Cloud</li>
+                        <li>Supabase</li>
+                        <li>API REST</li>
+                        <li>Microservices</li>
+                        <li>ETL pipelines</li>
                     </ul>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Développement Desktop</h3>
+
+                <div class="skill-category animate delay-2">
+                    <h3><span class="skill-icon"><i class="fas fa-code"></i></span> Développement &amp; .NET</h3>
                     <ul class="skills-list">
-                        <li><i class="fas fa-check"></i> WinForms</li>
-                        <li><i class="fas fa-check"></i> WPF</li>
+                        <li>C#</li>
+                        <li>.NET Core</li>
+                        <li>ASP.NET Core</li>
+                        <li>Entity Framework</li>
+                        <li>WinForms</li>
+                        <li>WPF</li>
+                        <li>JavaScript</li>
+                        <li>Git</li>
                     </ul>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Outils & Méthodologies</h3>
+
+                <div class="skill-category animate delay-3">
+                    <h3><span class="skill-icon"><i class="fas fa-users"></i></span> Soft Skills &amp; Méthodes</h3>
                     <ul class="skills-list">
-                        <li><i class="fas fa-check"></i> Git</li>
-                        <li><i class="fas fa-check"></i> UML</li>
-                        <li><i class="fas fa-check"></i> Merise</li>
+                        <li>Agile / Scrum</li>
+                        <li>Recueil besoins</li>
+                        <li>Leadership</li>
+                        <li>Autonomie</li>
+                        <li>Sens de la rigueur</li>
+                        <li>Relationnel</li>
+                        <li>Pédagogie</li>
                     </ul>
                 </div>
             </div>
@@ -829,113 +855,154 @@
 
         <!-- Projects Section -->
         <section id="projects" class="section animate">
-            <h2 class="section-title">Mes Réalisations</h2>
-            
+            <h2 class="section-title">Projets</h2>
+
             <div class="projects-filter">
                 <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="genai">IA Générative</button>
+                <button class="filter-btn" data-filter="data">Data / Vision</button>
+                <button class="filter-btn" data-filter="automation">Automatisation</button>
+                <button class="filter-btn" data-filter="dotnet">.NET / Web</button>
                 <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="desktop">Desktop</button>
-                <button class="filter-btn" data-filter="web">Web</button>
             </div>
-            
+
             <div class="projects-grid">
-                <!-- Mobile Projects -->
-                <div class="project animate delay-1" data-category="mobile">
-                    <img src="images/foussha.png" alt="Foussha" class="project-image">
+                <!-- StraightChoice -->
+                <div class="project animate delay-1" data-category="automation genai">
+                    <div class="project-badge">Top</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
                     <div class="project-content">
-                        <h3>Foussha</h3>
+                        <h3>StraightChoice</h3>
                         <p class="project-description">
-                            Application qui présente des images et demande à l'utilisateur de trouver le mot correspondant. Jeu éducatif et divertissant.
+                            Comparateur intelligent de prix internationaux entièrement automatisé. Workflow n8n orchestrant APIs, LLM, bases de données et services cloud pour extraire, enrichir et comparer des offres produits en temps réel.
                         </p>
                         <div class="tech-tags">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">XML</span>
-                            <span class="tech-tag">Android Studio</span>
+                            <span class="tech-tag">n8n</span>
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Google Cloud</span>
+                            <span class="tech-tag">Docker</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.jeux.ayoub.trouvelemotcorrect" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Voir sur Play Store</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Voir le projet</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project animate delay-2" data-category="mobile">
-                    <img src="images/Squezy.png" alt="Squeeze Your Brain" class="project-image">
+                <!-- Bird Detection -->
+                <div class="project animate delay-2" data-category="genai data">
+                    <div class="project-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-dove"></i>
+                    </div>
                     <div class="project-content">
-                        <h3>Squeeze Your Brain</h3>
+                        <h3>Bird Detection</h3>
                         <p class="project-description">
-                            Application contenant trois catégories de jeux cérébraux : Questions Intelligentes, Quiz Mathématique et Les Scientifiques.
+                            Chatbot intelligent de reconnaissance d'espèces d'oiseaux par image. Combine un modèle de vision PyTorch, une API FastAPI et un LLM Groq via le protocole MCP pour interpréter et expliquer les résultats.
                         </p>
                         <div class="tech-tags">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">XML</span>
-                            <span class="tech-tag">Android Studio</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">MCP</span>
+                            <span class="tech-tag">LLM Groq</span>
+                            <span class="tech-tag">Fine-tuning</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=-0uNc1sN48Y" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
+                            <a href="https://github.com/Dargoul-Ayoub/Bird-Detection" target="_blank" class="project-link"><i class="fab fa-github"></i> Code source</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project animate delay-3" data-category="mobile">
-                    <img src="images/radio.png" alt="Moroccan Radio" class="project-image">
+                <!-- Agent Médical -->
+                <div class="project animate delay-3" data-category="genai data">
+                    <div class="project-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-user-md"></i>
+                    </div>
                     <div class="project-content">
-                        <h3>Moroccan Radio</h3>
+                        <h3>Agent Intelligent — Codification Médicale</h3>
                         <p class="project-description">
-                            Application radio marocaine avec contrôle via notification même lorsque l'écran est verrouillé.
+                            Automatisation de la codification d'actes médicaux à partir de données Excel. Architecture RAG complète avec chunking, embeddings, stockage vectoriel ChromaDB et génération contextualisée via LangChain.
                         </p>
                         <div class="tech-tags">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">XML</span>
-                            <span class="tech-tag">Android Studio</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">ChromaDB</span>
+                            <span class="tech-tag">HuggingFace</span>
+                            <span class="tech-tag">Python</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.intelegent.ayoub.intelegent" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Voir sur Play Store</a>
+                            <a href="#" class="project-link"><i class="fas fa-lock"></i> Privé</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project animate delay-4" data-category="mobile">
-                    <img src="images/vote.png" alt="Customer Feedback" class="project-image">
+                <!-- Dashboard CRM -->
+                <div class="project animate delay-1" data-category="data">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <div class="project-content">
-                        <h3>Système de Feedback Clients</h3>
+                        <h3>Dashboard CRM Power BI</h3>
                         <p class="project-description">
-                            Application mobile pour recueillir les retours clients avec tableau de bord web intégré.
+                            Tableau de bord interactif pour l'analyse des opportunités commerciales. KPIs dynamiques, segmentation clients, pipeline de ventes et visualisations avancées avec DAX.
                         </p>
                         <div class="tech-tags">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Android Studio</span>
-                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">Dataviz</span>
+                            <span class="tech-tag">KPIs</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dargoul-Ayoub/CRM-Sales-Opportunities-Maven-Sales-Challenge" target="_blank" class="project-link"><i class="fab fa-github"></i> Code source</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plateforme E-commerce -->
+                <div class="project animate delay-2" data-category="dotnet">
+                    <img src="images/Technologie.png" alt="Plateforme E-commerce" class="project-image">
+                    <div class="project-content">
+                        <h3>Plateforme E-commerce</h3>
+                        <p class="project-description">
+                            Site e-commerce complet avec tableau de bord administrateur, gestion produits, panier et système de paiement. Architecture ASP.NET Core 3.1 avec Entity Framework et SQL Server.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">ASP.NET Core</span>
+                            <span class="tech-tag">Entity Framework</span>
                             <span class="tech-tag">SQL Server</span>
-                            <span class="tech-tag">ASP.NET</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=r9PPTVsTIl0" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
+                            <a href="https://github.com/Dargoul-Ayoub/Technologie-Product" target="_blank" class="project-link"><i class="fab fa-github"></i> Code source</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Desktop Projects -->
-                <div class="project animate delay-1" data-category="desktop">
-                    <img src="images/1591617631145.jfif" alt="Collection Note" class="project-image">
+                <!-- Training Center -->
+                <div class="project animate delay-3" data-category="dotnet">
+                    <img src="images/Trainig center.png" alt="Site Centre de Formation" class="project-image">
                     <div class="project-content">
-                        <h3>Collection Note</h3>
+                        <h3>Site Centre de Formation</h3>
                         <p class="project-description">
-                            Application permettant de créer et organiser des notes avec un accès rapide et une interface intuitive.
+                            Site web pour centre de formation avec présentation des programmes, inscription en ligne et backoffice complet.
                         </p>
                         <div class="tech-tags">
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">WinForms</span>
-                            <span class="tech-tag">Visual Studio</span>
+                            <span class="tech-tag">ASP.NET Core</span>
+                            <span class="tech-tag">Entity Framework</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">jQuery</span>
+                            <span class="tech-tag">LINQ</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://youtu.be/xt-YinY0OQg" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
-                            <a href="https://github.com/Dargoul-Ayoub/CollectionNote" target="_blank" class="project-link"><i class="fab fa-github"></i> Code source</a>
+                            <a href="https://www.youtube.com/watch?v=3M8RJgMtL-Q" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Web Projects -->
-                <div class="project animate delay-2" data-category="web">
+                <!-- BeMotivated -->
+                <div class="project animate delay-1" data-category="dotnet">
                     <img src="images/beMotivated.png" alt="BeMotivated" class="project-image">
                     <div class="project-content">
                         <h3>BeMotivated</h3>
@@ -955,142 +1022,155 @@
                     </div>
                 </div>
 
-                <div class="project animate delay-3" data-category="web">
-                    <img src="images/Technologie.png" alt="E-commerce" class="project-image">
+                <!-- Foussha -->
+                <div class="project animate delay-2" data-category="mobile">
+                    <img src="images/foussha.png" alt="Foussha" class="project-image">
                     <div class="project-content">
-                        <h3>Plateforme E-commerce</h3>
+                        <h3>Foussha</h3>
                         <p class="project-description">
-                            Site e-commerce complet avec tableau de bord administrateur, gestion produits, panier et paiement.
+                            Application qui présente des images et demande à l'utilisateur de trouver le mot correspondant. Jeu éducatif et divertissant.
                         </p>
                         <div class="tech-tags">
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">ASP.NET Core 3.1</span>
-                            <span class="tech-tag">Entity Framework</span>
-                            <span class="tech-tag">SQL Server</span>
-                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">Android Studio</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=piryW-wtBJA&t=0s" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
-                            <a href="https://github.com/Dargoul-Ayoub/Technologie-Product" target="_blank" class="project-link"><i class="fab fa-github"></i> Code source</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.jeux.ayoub.trouvelemotcorrect" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Play Store</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project animate delay-4" data-category="web">
-                    <img src="images/Trainig center.png" alt="Training Center" class="project-image">
+                <!-- Squeeze Your Brain -->
+                <div class="project animate delay-3" data-category="mobile">
+                    <img src="images/Squezy.png" alt="Squeeze Your Brain" class="project-image">
                     <div class="project-content">
-                        <h3>Site Centre de Formation</h3>
+                        <h3>Squeeze Your Brain</h3>
                         <p class="project-description">
-                            Site web pour centre de formation avec présentation des programmes, inscription en ligne et backoffice.
+                            Application contenant trois catégories de jeux cérébraux : Questions Intelligentes, Quiz Mathématique et Les Scientifiques.
                         </p>
                         <div class="tech-tags">
-                            <span class="tech-tag">ASP.NET Core 3.1</span>
-                            <span class="tech-tag">Entity Framework</span>
-                            <span class="tech-tag">SQL Server</span>
-                            <span class="tech-tag">jQuery</span>
-                            <span class="tech-tag">LINQ</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">Android Studio</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=3M8RJgMtL-Q&t=314s" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
+                            <a href="https://www.youtube.com/watch?v=-0uNc1sN48Y" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moroccan Radio -->
+                <div class="project animate delay-1" data-category="mobile">
+                    <img src="images/radio.png" alt="Moroccan Radio" class="project-image">
+                    <div class="project-content">
+                        <h3>Moroccan Radio</h3>
+                        <p class="project-description">
+                            Application radio avec contrôle via notification même lorsque l'écran est verrouillé.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">Android Studio</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.intelegent.ayoub.intelegent" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Play Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback Clients -->
+                <div class="project animate delay-2" data-category="mobile">
+                    <img src="images/vote.png" alt="Feedback Clients" class="project-image">
+                    <div class="project-content">
+                        <h3>Système de Feedback Clients</h3>
+                        <p class="project-description">
+                            Application mobile pour recueillir les retours clients avec tableau de bord web intégré.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Android Studio</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">ASP.NET</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=r9PPTVsTIl0" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Note -->
+                <div class="project animate delay-3" data-category="dotnet">
+                    <img src="images/1591617631145.jfif" alt="Collection Note" class="project-image">
+                    <div class="project-content">
+                        <h3>Collection Note</h3>
+                        <p class="project-description">
+                            Application permettant de créer et organiser des notes avec un accès rapide et une interface intuitive.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">WinForms</span>
+                            <span class="tech-tag">Visual Studio</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://youtu.be/xt-YinY0OQg" target="_blank" class="project-link"><i class="fab fa-youtube"></i> Voir démo</a>
+                            <a href="https://github.com/Dargoul-Ayoub/CollectionNote" target="_blank" class="project-link"><i class="fab fa-github"></i> Code source</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <!-- <section id="experience" class="section animate">
-            <h2 class="section-title">Mon Parcours</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 - Présent</div>
-                        <h3 class="timeline-title">Développeur .NET Freelance</h3>
-                        <p>Développement d'applications mobile, desktop et web pour divers clients. Spécialisation dans les technologies .NET et Java Android.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2020 - 2023</div>
-                        <h3 class="timeline-title">Auto-formation intensive</h3>
-                        <p>Apprentissage approfondi des technologies de développement : C#, Java, ASP.NET, Android Development, SQL Server, etc.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2019</div>
-                        <h3 class="timeline-title">Découverte de la passion pour le développement</h3>
-                        <p>Réorientation professionnelle après 7 ans dans un autre domaine pour me consacrer à ma passion pour la programmation.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <!-- Contact Section -->
         <section id="contact" class="section animate">
-            <h2 class="section-title">Contactez-moi</h2>
-            
-            
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact-container">
                 <div class="contact-info">
-                    <p>Je suis actuellement ouvert aux opportunités de travail. N'hésitez pas à me contacter si vous souhaitez discuter d'un projet ou d'une opportunité de collaboration.</p>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>06 44 35 87 39</span>
-                    </div>
-                    
+                    <h3>Travaillons ensemble</h3>
+                    <p>Vous avez un projet en IA, Data Science, automatisation ou développement .NET ? Discutons-en.</p>
+
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <span>ayoub.dargoul@gmail.com</span>
                     </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Rabat, Maroc</span>
-                    </div>
-                    
+
                     <div class="social-links">
-                        <a href="https://github.com/Dargoul-Ayoub" target="_blank">
+                        <a href="https://github.com/Dargoul-Ayoub" target="_blank" title="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/ayoub-dargoul-574373a8/" target="_blank">
+                        <a href="https://www.linkedin.com/in/ayoub-dargoul-574373a8/" target="_blank" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-
                     </div>
                 </div>
-                
-                <!-- <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Votre nom" required>
-                    <input type="email" placeholder="Votre email" required>
-                    <input type="text" placeholder="Sujet" required>
-                    <textarea placeholder="Votre message" required></textarea>
-                    <button type="submit" class="btn">Envoyer le message</button>
-                </form> -->
-           
+
+                <div class="contact-info">
+                    <h3>Profil complet</h3>
+                    <p>Toutes les informations sur mon parcours, mes compétences et mes projets sont disponibles ci-dessus. Pour les recruteurs, mon profil LinkedIn est à jour avec l'ensemble de mes expériences.</p>
+                    <a href="https://www.linkedin.com/in/ayoub-dargoul-574373a8/" target="_blank" class="btn" style="margin-top: 16px; display: inline-block;">
+                        <i class="fab fa-linkedin-in" style="margin-right: 8px;"></i> Voir mon LinkedIn
+                    </a>
+                </div>
+            </div>
         </section>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>Dargoul Ayoub - Développeur .NET Passionné</p>
-            <div class="social-links">
+            <p>Ayoub DARGOUL — Data Scientist | IA Générative | .NET</p>
+            <div class="social-links" style="justify-content: center;">
                 <a href="https://github.com/Dargoul-Ayoub" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/ayoub-dargoul-574373a8/" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://play.google.com/store/apps/developer?id=DARAYO" target="_blank">
-                    <i class="fab fa-google-play"></i>
-                </a>
             </div>
             <div class="footer-credit">
-                &copy; 2023 Dargoul Ayoub. Propulsé par passion et détermination.
+                &copy; 2026 Ayoub DARGOUL. Construit avec passion, données et un peu d'IA.
             </div>
         </div>
     </footer>
@@ -1104,13 +1184,13 @@
         // Navigation responsive
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
+
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+            hamburger.innerHTML = navLinks.classList.contains('active') ?
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-        
+
         // Fermer le menu en cliquant sur un lien
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
@@ -1118,33 +1198,34 @@
                 hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
-        // Filtrage des projets
+
+        // Filtrage des projets (multi-catégories)
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projects = document.querySelectorAll('.project');
-        
+
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Retirer la classe active de tous les boutons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Ajouter la classe active au bouton cliqué
                 button.classList.add('active');
-                
+
                 const filter = button.getAttribute('data-filter');
-                
+
                 projects.forEach(project => {
-                    if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                    const categories = project.getAttribute('data-category');
+                    if (filter === 'all' || categories.includes(filter)) {
                         project.style.display = 'block';
+                        setTimeout(() => project.style.opacity = '1', 10);
                     } else {
                         project.style.display = 'none';
+                        project.style.opacity = '0';
                     }
                 });
             });
         });
-        
+
         // Back to top button
         const backToTopButton = document.getElementById('backToTop');
-        
+
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('show');
@@ -1152,15 +1233,25 @@
                 backToTopButton.classList.remove('show');
             }
         });
-        
+
         backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
+
+        // Navbar background on scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
+        });
+
         // Animation au défilement
         const animateElements = document.querySelectorAll('.animate');
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1169,22 +1260,12 @@
                 }
             });
         }, { threshold: 0.1 });
-        
+
         animateElements.forEach(element => {
             element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             observer.observe(element);
-        });
-        
-        // Formulaire de contact
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Ici vous ajouteriez le code pour envoyer le formulaire
-            alert('Merci pour votre message! Je vous répondrai dès que possible.');
-            contactForm.reset();
         });
     </script>
 </body>
